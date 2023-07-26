@@ -50,6 +50,9 @@ docs = [
     "markupsafe<2.1"
 ]
 
+[project.entry-points."aiida.transports"]
+"ssh2win" = "aiida_ssh2win.transport:SshToWindowsTransport"
+
 [tool.flit.module]
 name = "aiida_ssh2win"
 

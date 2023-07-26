@@ -17,6 +17,7 @@ intended to help developers get started with their AiiDA plugins.
   - [`ci.yml`](.github/workflows/ci.yml): runs tests, checks test coverage and builds documentation at every new commit
   - [`publish-on-pypi.yml`](.github/workflows/publish-on-pypi.yml): automatically deploy git tags to PyPI - just generate a [PyPI API token](https://pypi.org/help/#apitoken) for your PyPI account and add it to the `pypi_token` secret of your github repository
 - [`aiida_ssh2win/`](aiida_ssh2win/): The main source code of the plugin package
+  - [`transport.py`](aiida_ssh2win/transport.py): Contains `SshToWindowsTransport` - a concrete implementation of AiiDA's `Transport` interface
 - [`docs/`](docs/): A documentation template ready for publication on [Read the Docs](http://aiida-ssh2win.readthedocs.io/en/latest/)
 - [`tests/`](tests/): Unit testing using the [pytest](https://docs.pytest.org/en/latest/) framework. Install `pip install -e .[testing]` and run `pytest`.
 - [`.gitignore`](.gitignore): Telling git which files to ignore
@@ -32,6 +33,7 @@ intended to help developers get started with their AiiDA plugins.
 ```shell
 pip install aiida-ssh2win
 verdi quicksetup  # better to set up a new profile
+verdi plugin list aiida.transports  # should now show the `ssh2win` plugins
 ```
 
 ## Usage

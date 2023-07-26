@@ -15,6 +15,7 @@ Use the following commands to install the plugin::
     pip install -e .  # also installs aiida, if missing (but not postgres)
     #pip install -e .[pre-commit,testing] # install extras for more features
     verdi quicksetup  # better to set up a new profile
+    verdi plugin list aiida.transports  # should now show the ``ssh2win`` transport
 
 Usage
 +++++
