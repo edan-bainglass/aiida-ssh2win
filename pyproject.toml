@@ -49,18 +49,6 @@ docs = [
     "markupsafe<2.1"
 ]
 
-[project.entry-points."aiida.data"]
-"ssh2win" = "aiida_ssh2win.data:DiffParameters"
-
-[project.entry-points."aiida.calculations"]
-"ssh2win" = "aiida_ssh2win.calculations:DiffCalculation"
-
-[project.entry-points."aiida.parsers"]
-"ssh2win" = "aiida_ssh2win.parsers:DiffParser"
-
-[project.entry-points."aiida.cmdline.data"]
-"ssh2win" = "aiida_ssh2win.cli:data_cli"
-
 [tool.flit.module]
 name = "aiida_ssh2win"
 
