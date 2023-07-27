@@ -39,7 +39,8 @@ testing = [
 ]
 pre-commit = [
     "pre-commit~=2.2",
-    "pylint~=2.15.10"
+    "flake8~=6.0",
+    "yapf==0.32",
 ]
 docs = [
     "sphinx",
