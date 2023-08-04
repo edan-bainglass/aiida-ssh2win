@@ -8,6 +8,16 @@ class SshToWindowsTransport(SshTransport):
     remote computers running Windows Powershell via SSH+SFTP.
     """
 
+    def exec_command_wait(
+        self,
+        command,
+        stdin=None,
+        encoding='utf-8',
+        **kwargs,
+    ):
+        encoding = 'iso-8859-1'
+        return super().exec_command_wait(command, stdin, encoding, **kwargs)
+
     def _exec_command_internal(
         self,
         command,
