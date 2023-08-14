@@ -8,6 +8,8 @@ class SshToWindowsTransport(SshTransport):
     remote computers running Windows Powershell via SSH+SFTP.
     """
 
+    shell_type = "powershell"
+
     def exec_command_wait(
         self,
         command,
@@ -58,7 +60,7 @@ class SshToWindowsTransport(SshTransport):
             f"Command to be executed: {command_to_execute[:self._MAX_EXEC_COMMAND_LOG_SIZE]}"
         )
 
-        channel.exec_command(f'powershell "{command_to_execute}"')
+        channel.exec_command(f'{self.shell_type} "{command_to_execute}"')
 
         stdin = channel.makefile("wb", bufsize)
         stdout = channel.makefile("rb", bufsize)
