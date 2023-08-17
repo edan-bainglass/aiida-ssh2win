@@ -52,7 +52,7 @@ class SshToWindowsTransport(SshTransport):
 
         if self.getcwd() is not None:
             escaped_folder = escape_for_bash(self.getcwd()[1:])
-            command_to_execute = f"cd {escaped_folder}; {command}"
+            command_to_execute = f"cd {escaped_folder}; cd {escaped_folder}; {command}"  # HACK
         else:
             command_to_execute = command
 
